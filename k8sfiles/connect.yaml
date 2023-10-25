@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: connect-helloworld
+spec:
+  containers:
+    - name: connect-helloworld
+      image: iundarigun/connect-helloworld
+      ports:
+        - containerPort: 2012
+      env:
+        - HELLOWORLD_URL: http://helloworld.default.svc.cluster.local

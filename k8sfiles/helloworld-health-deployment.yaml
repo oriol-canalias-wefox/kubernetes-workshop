@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        - name: helloworld
+          image: iundarigun/helloworld:20231025
+          ports:
+            - containerPort: 2012
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 2012
+            initialDelaySeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 2012
+            initialDelaySeconds: 30
