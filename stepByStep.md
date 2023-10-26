@@ -84,14 +84,13 @@ Deploy new one to connect:
 ```shell
 bat k8sfiles/connect.yaml
 kubectl apply -f k8sfiles/connect.yaml
-kubectl port-forward connect-helloworld 2012:2012
+kubectl port-forward connect-helloworld 2012:2012 &
 ```
 
 visit http://localhost:2012/connect
 
 ```shell
 kubectl logs -f --tail=10 -l app=helloworld
-kubectl delete connect-helloworld
 ```
 
 What happens if we try to deploy a new version:
@@ -99,10 +98,10 @@ What happens if we try to deploy a new version:
 bat k8sfiles/helloworld-new-deployment.yaml
 kubectl apply -f k8sfiles/helloworld-new-deployment.yaml
 kubectl get pods
-kubectl port-forward helloworld-<deployhash>-<podhash> 2012:2012
+kubectl port-forward 
 ```
 
-visit http://localhost:2012
+visit http://localhost:2012/connect
 Explain the errors.
 
 ```shell
@@ -125,4 +124,8 @@ kubectl get pods -n local-test
 ## More and more and more
 
 Config kube file
+```shell
+bat ~/.kube/config -l yaml
+```
+
 k9s

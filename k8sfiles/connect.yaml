@@ -9,4 +9,5 @@ spec:
       ports:
         - containerPort: 2012
       env:
-        - HELLOWORLD_URL: http://helloworld.default.svc.cluster.local
+        - name: "HELLOWORLD_URL"
+          value: "http://helloworld.default.svc.cluster.local"
