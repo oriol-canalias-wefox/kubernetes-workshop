@@ -12,3 +12,14 @@ Start a kind cluster
 ```shell
 kind create cluster
 ```
+
+---
+## References
+-  6 min video: https://www.youtube.com/watch?v=TlHvYWVUZyc
+- Spanish podcast: https://www.unpodcastparati.com/kubernetes-dia-1/
+- https://kubernetes.io/docs/home/
+- https://github.com/kelseyhightower/kubernetes-the-hard-way
+- https://www.rancher.com/
+- https://aws.amazon.com/es/eks/
+- https://cloud.google.com/kubernetes-engine
+- https://azure.microsoft.com/es-es/products/kubernetes-service
